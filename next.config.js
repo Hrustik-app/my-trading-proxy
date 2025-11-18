@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: false, // Убедимся, что используется pages router
+    appDir: false,
   },
 };
 
