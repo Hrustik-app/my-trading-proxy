@@ -1,5 +1,3 @@
-// pages/api/investing.js
-
 export default async function handler(req, res) {
   // Настройка CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -17,10 +15,8 @@ export default async function handler(req, res) {
     return;
   }
 
-  // Получаем URL из query параметров
   const targetUrl = req.query.url;
 
-  // Проверка безопасности: разрешаем только определённые домены
   if (!targetUrl || (!targetUrl.startsWith('https://ssr.investing.com/') && !targetUrl.startsWith('https://api.coingecko.com/'))) {
     res.status(400).json({ error: 'Invalid or unauthorized target URL' });
     return;
